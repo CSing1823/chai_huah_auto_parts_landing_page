@@ -15,6 +15,10 @@
     --section-dark-4: #1c2229;
     --card-dark: #202b35;
     --card-dark-alt: #242b36;
+    --services-card-bg: linear-gradient(135deg, rgba(255, 255, 255, 0.055), transparent 40%), linear-gradient(135deg, #243141 0%, #292c43 48%, #352b46 100%);
+    --why-card-bg: radial-gradient(circle at 88% 18%, rgba(255, 255, 255, 0.12), transparent 30%), linear-gradient(135deg, rgba(255, 255, 255, 0.05), transparent 42%), linear-gradient(135deg, #292d38 0%, #342735 52%, #4a2630 100%);
+    --brands-card-bg: radial-gradient(circle at 88% 16%, rgba(255, 255, 255, 0.1), transparent 30%), linear-gradient(135deg, rgba(255, 255, 255, 0.055), transparent 40%), linear-gradient(135deg, #1f2c3a 0%, #263a4d 52%, #1f4050 100%);
+    --contact-card-bg: linear-gradient(135deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.075));
     --text-on-dark: #f4f7fb;
     --text-muted-on-dark: #c5ced8;
     --light-gray: #ecf0f1;         /* Light Gray */
@@ -356,8 +360,10 @@ p {
 }
 
 .stat-box {
-    background: linear-gradient(135deg, #2a3542 0%, #5a1722 100%);
-    color: var(--white);
+    background:
+        linear-gradient(135deg, rgba(255, 255, 255, 0.24), transparent 42%),
+        linear-gradient(135deg, #eadc9b 0%, #d4b55d 58%, #b98d33 100%);
+    color: #241f16;
     padding: 1.25rem;
     border-radius: var(--border-radius);
     text-align: center;
@@ -367,7 +373,7 @@ p {
 
 .stat-box:hover {
     transform: translateY(-10px);
-    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+    box-shadow: 0 12px 30px rgba(212, 181, 93, 0.24);
 }
 
 .stat-box h3 {
@@ -375,9 +381,14 @@ p {
     margin-bottom: 0.5rem;
 }
 
+.stat-box .text-danger {
+    color: #dc3545 !important;
+}
+
 .stat-box p {
     font-size: 0.95rem;
     margin: 0;
+    color: #3d3420;
 }
 
 /* ============= SERVICES SECTION ============= */
@@ -394,9 +405,7 @@ p {
 }
 
 .service-card {
-    background:
-        linear-gradient(135deg, rgba(255, 255, 255, 0.045), transparent 38%),
-        linear-gradient(135deg, var(--card-dark) 0%, #253443 100%);
+    background: var(--services-card-bg);
     padding: 1.35rem;
     border-radius: var(--border-radius);
     text-align: center;
@@ -407,36 +416,6 @@ p {
     display: flex;
     flex-direction: column;
     animation: slideInLeft 0.6s ease-out;
-}
-
-.services-section .col-md-6:nth-child(2) .service-card {
-    background:
-        linear-gradient(135deg, rgba(255, 255, 255, 0.045), transparent 38%),
-        linear-gradient(135deg, #222c3a 0%, #302843 100%);
-}
-
-.services-section .col-md-6:nth-child(3) .service-card {
-    background:
-        linear-gradient(135deg, rgba(255, 255, 255, 0.045), transparent 38%),
-        linear-gradient(135deg, #202c34 0%, #203b36 100%);
-}
-
-.services-section .col-md-6:nth-child(4) .service-card {
-    background:
-        linear-gradient(135deg, rgba(255, 255, 255, 0.045), transparent 38%),
-        linear-gradient(135deg, #252c34 0%, #3b2328 100%);
-}
-
-.services-section .col-md-6:nth-child(5) .service-card {
-    background:
-        linear-gradient(135deg, rgba(255, 255, 255, 0.045), transparent 38%),
-        linear-gradient(135deg, #242d35 0%, #3a3323 100%);
-}
-
-.services-section .col-md-6:nth-child(6) .service-card {
-    background:
-        linear-gradient(135deg, rgba(255, 255, 255, 0.045), transparent 38%),
-        linear-gradient(135deg, #1f2b35 0%, #203a40 100%);
 }
 
 .service-card:hover {
@@ -482,7 +461,7 @@ p {
 }
 
 .why-choose-card {
-    background: linear-gradient(135deg, #1f2630 0%, #2b3541 100%);
+    background: var(--why-card-bg);
     padding: 1.35rem;
     border-radius: var(--border-radius);
     text-align: center;
@@ -533,34 +512,14 @@ p {
 }
 
 .brand-box {
-    background: linear-gradient(135deg, var(--card-dark) 0%, #263543 100%);
+    background: var(--brands-card-bg);
     padding: 1.35rem;
     border-radius: var(--border-radius);
     text-align: center;
     transition: var(--transition);
-    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.28);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.24);
     border-left: 4px solid transparent;
     animation: slideInRight 0.6s ease-out;
-}
-
-.brands-section .col-md-6:nth-child(2) .brand-box {
-    background: linear-gradient(135deg, #222c3a 0%, #302843 100%);
-}
-
-.brands-section .col-md-6:nth-child(3) .brand-box {
-    background: linear-gradient(135deg, #202c34 0%, #203b36 100%);
-}
-
-.brands-section .col-md-6:nth-child(4) .brand-box {
-    background: linear-gradient(135deg, #252c34 0%, #3b2328 100%);
-}
-
-.brands-section .col-md-6:nth-child(5) .brand-box {
-    background: linear-gradient(135deg, #242d35 0%, #3a3323 100%);
-}
-
-.brands-section .col-md-6:nth-child(6) .brand-box {
-    background: linear-gradient(135deg, #1f2b35 0%, #203a40 100%);
 }
 
 .brand-box:hover {
@@ -728,7 +687,7 @@ body.lightbox-open {
     display: flex;
     gap: 1rem;
     padding: 1rem;
-    background: rgba(255, 255, 255, 0.1);
+    background: var(--contact-card-bg);
     border-radius: var(--border-radius);
     backdrop-filter: blur(10px);
     transition: var(--transition);
