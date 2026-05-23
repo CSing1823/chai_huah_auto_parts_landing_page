@@ -236,6 +236,64 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    // ============= GALLERY LIGHTBOX =============
+    const galleryLightbox = document.getElementById('galleryLightbox');
+    const galleryLightboxImage = document.querySelector('.gallery-lightbox-image');
+    const galleryLightboxClose = document.querySelector('.gallery-lightbox-close');
+    const galleryButtons = document.querySelectorAll('.gallery-link[data-gallery-src]');
+
+    function openGalleryLightbox(src, alt) {
+        if (!galleryLightbox || !galleryLightboxImage) {
+            return;
+        }
+
+        galleryLightboxImage.src = src;
+        galleryLightboxImage.alt = alt;
+        galleryLightbox.classList.add('show');
+        galleryLightbox.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('lightbox-open');
+
+        if (galleryLightboxClose) {
+            galleryLightboxClose.focus();
+        }
+    }
+
+    function closeGalleryLightbox() {
+        if (!galleryLightbox || !galleryLightboxImage) {
+            return;
+        }
+
+        galleryLightbox.classList.remove('show');
+        galleryLightbox.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('lightbox-open');
+        galleryLightboxImage.src = '';
+        galleryLightboxImage.alt = '';
+    }
+
+    galleryButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            openGalleryLightbox(this.dataset.gallerySrc, this.dataset.galleryAlt || 'Workshop gallery image');
+        });
+    });
+
+    if (galleryLightboxClose) {
+        galleryLightboxClose.addEventListener('click', closeGalleryLightbox);
+    }
+
+    if (galleryLightbox) {
+        galleryLightbox.addEventListener('click', event => {
+            if (event.target === galleryLightbox) {
+                closeGalleryLightbox();
+            }
+        });
+    }
+
+    document.addEventListener('keydown', event => {
+        if (event.key === 'Escape' && galleryLightbox && galleryLightbox.classList.contains('show')) {
+            closeGalleryLightbox();
+        }
+    });
+
     // ============= BUTTON RIPPLE EFFECT ============= 
     // Add ripple effect to buttons on click
     const buttons = document.querySelectorAll('.btn, .gallery-link');
