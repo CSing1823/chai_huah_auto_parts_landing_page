@@ -1,0 +1,71 @@
+# OS Files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+.project
+.classpath
+*.c9/
+*.swp
+*.swo
+*~
+
+# Dependencies
+node_modules/
+npm-debug.log
+yarn-error.log
+package-lock.json
+yarn.lock
+
+# Build outputs
+dist/
+build/
+*.min.js
+*.min.css
+
+# Environment
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Temporary files
+*.tmp
+*.temp
+.cache/
+temp/
+
+# Logs
+logs/
+*.log
+
+# OS generated files
+.AppleDouble
+.LSOverride
+*.rej
+.idea
+
+# Optional npm cache
+.npm
+
+# Optional REPL history
+.node_repl_history
+
+# Local development
+local.json
+config.local.json
+
+# Images (if using actual images)
+# Uncomment if using git for images
+# images/*.jpg
+# images/*.png
+# images/*.gif
+
+# Misc
+.prettierignore
