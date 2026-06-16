@@ -6,8 +6,10 @@
 /* ============= CSS VARIABLES ============= */
 :root {
     --primary-color: #dc3545;      /* Red */
+    --nav-accent-color: #5ecbff;   /* Light Blue */
+    --nav-accent-soft: rgba(94, 203, 255, 0.16);
     --dark-gray: #2c3e50;          /* Dark Gray */
-    --dark-surface: linear-gradient(135deg, #151b24 0%, #263846 52%, #5a1722 100%);
+    --dark-surface: linear-gradient(135deg, #151b24 0%, #263846 52%, #1f5f7a 100%);
     --dark-surface-footer: radial-gradient(circle at top left, rgba(220, 53, 69, 0.22), transparent 34%), linear-gradient(135deg, #151b24 0%, #263846 48%, #4a1620 100%);
     --section-dark-1: #101820;
     --section-dark-2: #18232d;
@@ -152,7 +154,7 @@ p {
 }
 
 .navbar-brand:hover {
-    color: var(--primary-color) !important;
+    color: var(--nav-accent-color) !important;
     transform: scale(1.05);
 }
 
@@ -166,7 +168,7 @@ p {
 
 .navbar-nav .nav-link:hover,
 .navbar-nav .nav-link.active {
-    color: var(--primary-color) !important;
+    color: var(--nav-accent-color) !important;
 }
 
 .navbar-nav .nav-link::after {
@@ -176,13 +178,57 @@ p {
     left: 0;
     width: 0;
     height: 2px;
-    background-color: var(--primary-color);
+    background-color: var(--nav-accent-color);
     transition: width 0.3s ease;
 }
 
 .navbar-nav .nav-link:hover::after,
 .navbar-nav .nav-link.active::after {
     width: 100%;
+}
+
+.language-nav-item {
+    display: flex;
+    align-items: center;
+}
+
+.language-switcher {
+    display: inline-flex;
+    align-items: center;
+    width: fit-content;
+    margin-top: 0.5rem;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    border-radius: 999px;
+}
+
+.language-switch-link {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    min-width: 44px;
+    min-height: 40px;
+    padding: 0.45rem 0.65rem !important;
+    border-right: 1px solid rgba(255, 255, 255, 0.18);
+    line-height: 1;
+}
+
+.language-switch-link:last-child {
+    border-right: 0;
+}
+
+.language-switch-link::after {
+    display: none;
+}
+
+.language-switch-link:hover,
+.language-switch-link:focus {
+    background-color: var(--nav-accent-soft);
+}
+
+.language-switch-link.language-current {
+    color: var(--white) !important;
+    background-color: var(--nav-accent-color);
 }
 
 /* ============= HERO SECTION ============= */
@@ -1150,6 +1196,15 @@ body.lightbox-open {
     .navbar-nav .nav-link {
         margin: 0 0.5rem;
         padding: 0.5rem 0.75rem !important;
+    }
+
+    .language-switcher {
+        margin-top: 0;
+        margin-left: 0.4rem;
+    }
+
+    .language-switch-link {
+        padding: 0.45rem 0.8rem !important;
     }
 
     .hero-section {

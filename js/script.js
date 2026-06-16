@@ -4,6 +4,10 @@
    ==================================== */
 
 document.addEventListener('DOMContentLoaded', function() {
+    const pageLanguage = document.documentElement.lang.toLowerCase();
+    const isChinesePage = pageLanguage.startsWith('zh');
+    const isMalayPage = pageLanguage.startsWith('ms');
+
     // ============= SMOOTH SCROLLING ============= 
     // Handle smooth scrolling for navigation links
     const smoothScrollLinks = document.querySelectorAll('.smooth-scroll');
@@ -353,7 +357,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const backToTopButton = document.createElement('button');
     backToTopButton.innerHTML = '<i class="bi bi-chevron-up"></i>';
     backToTopButton.className = 'back-to-top-btn';
-    backToTopButton.title = 'Back to Top';
+    backToTopButton.title = isChinesePage ? '返回顶部' : isMalayPage ? 'Kembali ke atas' : 'Back to Top';
     document.body.appendChild(backToTopButton);
 
     // Show/hide back-to-top button based on scroll position
@@ -444,7 +448,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const printButton = document.createElement('button');
     printButton.innerHTML = '<i class="bi bi-printer"></i>';
     printButton.className = 'print-btn';
-    printButton.title = 'Print Page';
+    printButton.title = isChinesePage ? '打印页面' : isMalayPage ? 'Cetak halaman' : 'Print Page';
     printButton.style.display = 'none'; // Hidden by default
 
     printButton.addEventListener('click', () => {
