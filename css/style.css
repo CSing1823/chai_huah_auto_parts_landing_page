@@ -276,7 +276,7 @@ p {
 
 .hero-malay-name {
     display: inline-block;
-    color: #ffd2d7;
+    color: var(--nav-accent-color);
     font-size: 1rem;
     font-weight: 700;
     line-height: 1.35;
