@@ -857,6 +857,11 @@ body.lightbox-open {
     opacity: 0.9;
 }
 
+.footer-credit {
+    color: var(--light-gray);
+    opacity: 0.85;
+}
+
 .footer-link {
     color: var(--light-gray);
     text-decoration: none;
