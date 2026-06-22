@@ -1342,6 +1342,7 @@ body.lightbox-open {
     }
 
     .language-nav-item {
+        order: -1;
         padding-left: 0.15rem;
     }
 
