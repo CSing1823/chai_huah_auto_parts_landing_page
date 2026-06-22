@@ -66,6 +66,7 @@ document.addEventListener('DOMContentLoaded', function() {
     };
 
     // Update navigation on scroll
+    updateNavigation();
     window.addEventListener('scroll', updateNavigation);
 
     // ============= SCROLL ANIMATIONS ============= 
