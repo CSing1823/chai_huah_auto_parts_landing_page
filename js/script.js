@@ -56,7 +56,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // Update active navigation link based on scroll position
     const updateNavigation = () => {
         const sections = document.querySelectorAll('section[id]');
-        const scrollPosition = window.scrollY + 100;
+        const navHeight = document.querySelector('.navbar').offsetHeight;
+        const scrollPosition = window.scrollY + navHeight + 24;
         let activeSectionId = 'home';
 
         sections.forEach(section => {
