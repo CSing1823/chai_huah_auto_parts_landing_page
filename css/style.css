@@ -1355,6 +1355,14 @@ body.lightbox-open {
         white-space: nowrap;
     }
 
+    .navbar-nav .nav-link:not(.active):focus {
+        color: var(--white) !important;
+    }
+
+    .navbar-nav .nav-link:not(.active):focus::after {
+        width: 0;
+    }
+
     .language-nav-item {
         order: -1;
         padding-left: 0.15rem;

@@ -11,6 +11,16 @@ document.addEventListener('DOMContentLoaded', function() {
     // ============= SMOOTH SCROLLING ============= 
     // Handle smooth scrolling for navigation links
     const smoothScrollLinks = document.querySelectorAll('.smooth-scroll');
+    const setActiveNavigationLink = (sectionId) => {
+        document.querySelectorAll('.navbar-nav .smooth-scroll').forEach(link => {
+            link.classList.remove('active');
+        });
+
+        const activeLink = document.querySelector(`.navbar-nav .smooth-scroll[href="#${sectionId}"]`);
+        if (activeLink) {
+            activeLink.classList.add('active');
+        }
+    };
     
     smoothScrollLinks.forEach(link => {
         link.addEventListener('click', function(e) {
@@ -19,6 +29,9 @@ document.addEventListener('DOMContentLoaded', function() {
             // Get the target element ID
             const targetId = this.getAttribute('href');
             const targetElement = document.querySelector(targetId);
+            const sectionId = targetId.replace('#', '');
+            setActiveNavigationLink(sectionId);
+            this.blur();
             
             // Close mobile menu if it's open
             const navbarToggle = document.querySelector('.navbar-toggler');
@@ -44,25 +57,16 @@ document.addEventListener('DOMContentLoaded', function() {
     const updateNavigation = () => {
         const sections = document.querySelectorAll('section[id]');
         const scrollPosition = window.scrollY + 100;
-        
+        let activeSectionId = 'home';
+
         sections.forEach(section => {
             const sectionTop = section.offsetTop;
-            const sectionHeight = section.offsetHeight;
-            const sectionId = section.getAttribute('id');
-            
-            if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-                // Remove active class from all links
-                document.querySelectorAll('.nav-link').forEach(link => {
-                    link.classList.remove('active');
-                });
-                
-                // Add active class to current section link
-                const activeLink = document.querySelector(`.nav-link[href="#${sectionId}"]`);
-                if (activeLink) {
-                    activeLink.classList.add('active');
-                }
+            if (scrollPosition >= sectionTop) {
+                activeSectionId = section.getAttribute('id');
             }
         });
+
+        setActiveNavigationLink(activeSectionId);
     };
 
     // Update navigation on scroll
