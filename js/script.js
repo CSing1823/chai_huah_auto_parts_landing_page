@@ -67,7 +67,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Update navigation on scroll
     updateNavigation();
-    window.addEventListener('scroll', updateNavigation);
 
     // ============= SCROLL ANIMATIONS ============= 
     // Animate elements as they come into view

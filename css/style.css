@@ -166,9 +166,14 @@ p {
     position: relative;
 }
 
-.navbar-nav .nav-link:hover,
 .navbar-nav .nav-link.active {
     color: var(--nav-accent-color) !important;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .navbar-nav .nav-link:hover {
+        color: var(--nav-accent-color) !important;
+    }
 }
 
 .navbar-nav .nav-link::after {
@@ -182,9 +187,14 @@ p {
     transition: width 0.3s ease;
 }
 
-.navbar-nav .nav-link:hover::after,
 .navbar-nav .nav-link.active::after {
     width: 100%;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .navbar-nav .nav-link:hover::after {
+        width: 100%;
+    }
 }
 
 .language-nav-item {
