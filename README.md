@@ -49,7 +49,7 @@ chai_huah_auto_parts_landing_page/
 
 ## Website Deployment
 
-No deployed website URL is specified in the project documentation or repository configuration. The HTML pages link to local files and external services, so the site can be hosted as a static website by uploading the project files while preserving the folder structure.
+The website is deployed and hosted on Vercel and is publicly accessible at [https://chai-huah-auto-parts-landing-page.vercel.app/](https://chai-huah-auto-parts-landing-page.vercel.app/). Google Search Console is configured to monitor the website's search performance and indexing status.
 
 ## Local Setup / Usage
 
